@@ -2159,12 +2159,12 @@ body::-webkit-scrollbar {
 
 
 
-.map-container {
+/* .map-container {
   width: 100%;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 .map-container iframe {
   width: 100%;
 }
@@ -2172,7 +2172,7 @@ html, body {
   overflow-x: hidden;
 }
 .section, .container {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 
