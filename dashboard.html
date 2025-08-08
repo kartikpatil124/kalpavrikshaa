@@ -3,27 +3,262 @@
 <head>
   <meta charset="UTF-8" />
   <title>Admin Dashboard</title>
-  <style>
+      <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --dark: #1f2937;
+      --darker: #111827;
+      --light: #f9fafb;
+      --danger: #ef4444;
+      --success: #10b981;
+    }
+    
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #111827;
-      color: #f9fafb;
-      padding: 2rem;
-    }
-    h1 {
-      color: #3b82f6;
-      margin-bottom: 1rem;
-    }
-    .entry {
-      background: #1f2937;
+      background-color: var(--darker);
+      color: var(--light);
       padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      min-height: 100vh;
     }
+    
+    h1 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    h1 i {
+      font-size: 1.25rem;
+    }
+    
+    #data {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    
+    .entry {
+      background: var(--dark);
+      padding: 1.25rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .entry:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .entry::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .entry:hover::before {
+      opacity: 1;
+    }
+    
     .entry p {
-      margin: 0.3rem 0;
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
+    
+    .entry p strong {
+      color: var(--primary);
+      font-weight: 500;
+      display: inline-block;
+      min-width: 100px;
+    }
+    
+    .entry-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      justify-content: flex-end;
+    }
+    
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .btn-danger {
+      background-color: var(--danger);
+      color: white;
+    }
+    
+    .btn-danger:hover {
+      background-color: #dc2626;
+      transform: translateY(-2px);
+    }
+    
+    .btn-edit {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .btn-edit:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      color: #9ca3af;
+      grid-column: 1 / -1;
+    }
+    
+    .empty-state i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #4b5563;
+    }
+    
+    .timestamp {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 0.5rem;
+      text-align: right;
+    }
+
+    /* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    padding: 0.75rem;
+  }
+  
+  #data {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .entry {
+    padding: 1rem;
+    border-left-width: 3px;
+  }
+  
+  .entry p {
+    font-size: 0.9rem;
+  }
+  
+  .entry p strong {
+    min-width: 80px;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .entry-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .empty-state {
+    padding: 2rem 1rem;
+  }
+  
+  .empty-state i {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+  
+  .entry {
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+  
+  .entry p {
+    font-size: 0.85rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    gap: 0.5rem;
+  }
+  
+  .timestamp {
+    font-size: 0.75rem;
+  }
+  
+  /* Adjust the edit/delete buttons in your JavaScript generated content */
+  .entry button {
+    width: 100%;
+    margin: 0.25rem 0;
+    padding: 0.5rem;
+  }
+}
+
+.entry-content p {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+
+.entry-content strong {
+  min-width: 110px;
+  color: var(--primary);
+}
+
+.entry-content span {
+  flex: 1;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .entry-content p {
+    flex-direction: column;
+    margin: 0.4rem 0;
+  }
+
+  .entry-content strong {
+    min-width: auto;
+    margin-bottom: 0.25rem;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -33,7 +268,7 @@
   <script>
     async function fetchSubmissions() {
       try {
-        const res = await fetch('https://boom-6.onrender.com/all-submissions');
+        const res = await fetch('https://kalpavrikshaa.onrender.com/all-submissions');
         const data = await res.json();
 
         const container = document.getElementById('data');
@@ -45,16 +280,25 @@
         data.forEach(submission => {
           const div = document.createElement('div');
           div.className = 'entry';
-          div.innerHTML = `
-  <p><strong>Full Name:</strong> ${submission.fullName}</p>
-  <p><strong>Email:</strong> ${submission.email}</p>
-  <p><strong>Phone:</strong> ${submission.phone || '-'}</p>
-  <p><strong>Inquiry:</strong> ${submission.inquiryType}</p>
-  <p><strong>Message:</strong> ${submission.message}</p>
-  <p><strong>Submitted At:</strong> ${new Date(submission.submittedAt).toLocaleString()}</p>
-  <button onclick="deleteSubmission('${submission._id}')">Delete</button>
-  <button onclick="editSubmission('${submission._id}')">Edit</button>
+div.innerHTML = `
+  <div class="entry-content">
+    <p><strong>Full Name:</strong> <span>${submission.fullName}</span></p>
+    <p><strong>Email:</strong> <span>${submission.email}</span></p>
+    <p><strong>Phone:</strong> <span>${submission.phone || '-'}</span></p>
+    <p><strong>Inquiry:</strong> <span>${submission.inquiryType}</span></p>
+    <p><strong>Message:</strong> <span>${submission.message}</span></p>
+  </div>
+  <p class="timestamp">${new Date(submission.submittedAt).toLocaleString()}</p>
+  <div class="entry-actions">
+    <button class="btn btn-edit" onclick="editSubmission('${submission._id}')">
+      <i>✏️</i> Edit
+    </button>
+    <button class="btn btn-danger" onclick="deleteSubmission('${submission._id}')">
+      <i>🗑️</i> Delete
+    </button>
+  </div>
 `;
+
 
           container.appendChild(div);
         });
@@ -68,7 +312,7 @@
 
     async function deleteSubmission(id) {
   if (confirm('Are you sure you want to delete this submission?')) {
-    await fetch(`https://boom-6.onrender.com/delete/${id}`, { method: 'DELETE' });
+    await fetch(`https://kalpavrikshaa.onrender.com/delete/${id}`, { method: 'DELETE' });
     location.reload();
   }
 }
@@ -80,8 +324,8 @@ function editSubmission(id) {
   const inquiryType = prompt('Enter new Inquiry Type:');
   const message = prompt('Enter new Message:');
 
-  if (fullName && email && phone && inquiryType && message) {
-    fetch(`https://boom-6.onrender.com/edit/${id}`, {
+  if (fullName || email || phone || inquiryType || message) {
+    fetch(`https://kalpavrikshaa.onrender.com/edit/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ fullName, email, phone, inquiryType, message })
