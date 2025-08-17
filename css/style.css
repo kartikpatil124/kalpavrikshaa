@@ -2456,6 +2456,7 @@ html, body {
     }
     .logo img {
         height: 60px !important;
+        width: 290px !important; 
         margin-top: 0px !important;
     }
     .Kalpavriksha p {
