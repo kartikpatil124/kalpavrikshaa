@@ -2495,7 +2495,7 @@ html, body {
 @media (max-width: 400px) {
     .logo {
         font-size: .8rem !important;
-        margin-left: 10px;
+        margin-left: 25px;
     }
     .container1{
         
@@ -2535,8 +2535,11 @@ html, body {
     
     .mobile-menu-btn span {
         height: 2.5px;
+        
     }
-    
+    .mobile-menu-btn{
+        margin-right:30px ;
+    }
 }
 
 /* Fix hero title being hidden under navbar */
