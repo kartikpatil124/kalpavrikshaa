@@ -2422,8 +2422,8 @@ html, body {
     }
     
     .joinbutton {
-        margin-left: 0px;
-        margin-right: 10px;
+        margin-left: auto;
+        margin-right: 15px;
     }
     
     .joinbutton a {
@@ -2461,7 +2461,7 @@ html, body {
         margin-top: 0px !important;
     }
     .Kalpavriksha p {
-        font-size: 20px !important;
+        font-size: 16px;
         margin-top: 0px;
     }
     
@@ -2484,18 +2484,13 @@ html, body {
         margin-right: 15px;
         margin-top: 0px;
     }
-    .mobile-menu-btn {
-        width: 30px;
-        height: 20px;
-        margin-right: 15px;
-    }
     
 }
 
 @media (max-width: 400px) {
     .logo {
         font-size: .8rem !important;
-        margin-left: 25px;
+        margin-left: 10px;
     }
     .container1{
         
@@ -2503,7 +2498,6 @@ html, body {
     margin-right: 0px;
     padding-left: 0px;
     padding-right: 0px;
-    padding: 0px;
 
     }
     .logo img {
@@ -2526,7 +2520,6 @@ html, body {
     .mobile-menu-btn {
         width: 26px;
         height: 18px;
-        margin-right: 20px;
     }
 
     .stat-item {
@@ -2535,11 +2528,8 @@ html, body {
     
     .mobile-menu-btn span {
         height: 2.5px;
-        
     }
-    .mobile-menu-btn{
-        margin-right:30px ;
-    }
+    
 }
 
 /* Fix hero title being hidden under navbar */
