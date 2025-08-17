@@ -65,6 +65,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+
+
 // Sticky Header on Scroll
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
@@ -172,26 +174,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Add ripple effect to buttons
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
+buttons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        // Only prevent default if it's NOT a real link
+        if (!this.hasAttribute('href') || this.getAttribute('href').startsWith('#')) {
             e.preventDefault();
-            
-            const x = e.clientX - e.target.getBoundingClientRect().left;
-            const y = e.clientY - e.target.getBoundingClientRect().top;
-            
-            const ripple = document.createElement('span');
-            ripple.classList.add('ripple-effect');
-            ripple.style.left = `${x}px`;
-            ripple.style.top = `${y}px`;
-            
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 1000);
-        });
+        }
+
+        const x = e.clientX - e.target.getBoundingClientRect().left;
+        const y = e.clientY - e.target.getBoundingClientRect().top;
+
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple-effect');
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+
+        this.appendChild(ripple);
+
+        setTimeout(() => {
+            ripple.remove();
+        }, 1000);
     });
+});
+
     
     // Text reveal animation
     const textRevealElements = document.querySelectorAll('.text-reveal');
