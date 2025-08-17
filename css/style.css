@@ -1,3 +1,8 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 /* Base Styles */
 :root {
     --primary-color: #2563eb;
@@ -58,11 +63,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
-p {
+/* p {
     margin-bottom: 1rem;
-}
+} */
 
-a {
+a{
     text-decoration: none;
     color: inherit;
     transition: var(--transition);
@@ -121,7 +126,7 @@ img {
 }
 
 .text-gradient {
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(90deg, #1eff4c, #acee8b);;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -272,14 +277,52 @@ img {
     z-index: 999;
     transition: all 0.3s ease;
     padding: 1rem 0;
+    /* font-family:"Cormorant_Garamond", sans-serif;     */
+    background-color: #ffffffeb;
+     font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+
+
+}
+.header p{
+    font-size: larger !important;    
+    color: black;
+
+}
+
+.header nav-links a{
+    color: var(--white);
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+@font-face {
+    font-family: 'Righteous';
+    src: url('/fonts/Righteous/Righteous-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cormorant_Garamond';
+    src: url('/fonts/Cormorant_Garamond/CormorantGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .header.scrolled {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgb(255, 255, 255);
     box-shadow: var(--shadow-sm);
     padding: 0.5rem 0;
 }
-
+.header.scrolled a {
+    color: var(--dark-color);
+}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -420,6 +463,8 @@ img {
 
 .stat-item-1 {
     background-color: rgba(0, 100, 255, 0.1); /* Blue */
+    width: 300px;
+    margin-left: 0px;
 }
 .stat-item-2 {
     background-color: rgba(0, 200, 100, 0.1); /* Green */
@@ -650,6 +695,16 @@ img {
 
 .course-footer {
     padding: 0 1.5rem 1.5rem;
+}
+.Sub .btn{
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 0px !important;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
 }
 
 .course-badge {
@@ -2175,4 +2230,297 @@ html, body {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 100px; /* adjust if your navbar is taller */
+  }
+  .hero-title {
+    font-size: 2rem; /* smaller title so it doesn't overflow */
+  }
+}
+@media (max-width: 768px) {
+  .hero-stats {
+    flex-wrap: nowrap;
+     /* allows scroll if too tight */
+    gap: 0px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  .stat-item {
+    flex: 0 0 150px; /* fixed width so all 3 fit in scroll */
+  }
+}
 
+/* Tablet & mobile adjustments */
+@media (max-width: 992px) {
+  .course-body {
+    gap: 40px;
+    margin-left: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 576px) {
+  .course-body {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start; /* or center if you want centered items */
+    margin-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contact-info, 
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-info {
+    order: 1; /* show info first */
+  }
+
+  .contact-form {
+    order: 2;
+  }
+}
+/* Responsive Contact Section */
+@media (max-width: 992px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-info, 
+  .contact-form {
+    width: 100%;
+  }
+
+  /* Make contact-info items stack nicely */
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .info-icon {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+  .contact-content {
+    gap: 1.5rem;
+  }
+
+  .info-text h3 {
+    font-size: 1rem;
+  }
+
+  .info-text p {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 768px) {
+  .nav-cta {
+    margin-left: auto;
+  }
+}
+
+
+/* Mobile styles */
+/* Navbar Responsive Styles */
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    .nav-link {
+        margin: 0 0.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0.8rem 0;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+    .logo img {
+        height: 35px;
+    }
+    .nav-links {
+        gap: 0.8rem;
+    }
+    .nav-link {
+        margin: 0 0.6rem;
+        font-size: 0.95rem;
+    }
+    .joinbutton a {
+        margin-left: 0 ;
+        margin-top: 0px !important;
+        font-size: 0.9rem ;
+    }
+    .Kalpavriksha p {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.6rem 0;
+        position: relative;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    .logo img {
+        height: 30px;
+    }
+    .Kalpavriksha p {
+        font-size: 17px;
+        margin-top: 15px;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: #ffffffdf;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2rem 0;
+        transition: all 0.5s ease;
+        gap: 1.5rem;
+        
+    }
+    
+    .nav-links.active {
+        left: 0;
+        max-height: 530px;
+        margin-top: 35px;
+    }
+    
+    .nav-link {
+        margin: 0;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+        color: var(--black);
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .joinbutton {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+    
+    .joinbutton a {
+        height: 40px;
+        width: 100px;
+        border-radius: 12px;
+        font-size: 10px;
+        padding: 10px 0;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+        z-index: 1000;
+    }
+    
+    .mobile-menu-btn span {
+        background-color: var(--white);
+    }
+    
+    .header.scrolled .mobile-menu-btn span {
+        background-color: var(--dark-color);
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 1.1rem;
+    }
+    .logo img {
+        height: 60px !important;
+        margin-top: 0px !important;
+    }
+    .Kalpavriksha p {
+        font-size: 16px;
+        margin-top: 0px;
+    }
+    
+    .nav-links {
+        top: 65px;
+        height: calc(100vh - 65px);
+    }
+    
+    .nav-link {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .joinbutton a {
+        height: 36px;
+        width: 80px;
+        font-size: 9px;
+        padding: 9px 0;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 0px;
+    }
+    
+}
+
+@media (max-width: 400px) {
+    .logo {
+        font-size: 1rem;
+    }
+    .logo img {
+        height: 50px !important;
+        margin: 0px;
+    }
+    .Kalpavriksha p {
+        font-size: 17px !important;
+        margin-top: 0px;
+    }
+    
+    .joinbutton a {
+        height: 34px;
+        width: 75px;
+        font-size: 8px;
+        padding: 8px 0;
+    }
+    
+    .mobile-menu-btn {
+        width: 26px;
+        height: 18px;
+    }
+
+    .stat-item {
+        height: 120px;
+    }
+    
+    .mobile-menu-btn span {
+        height: 2.5px;
+    }
+    
+}
+
+/* Fix hero title being hidden under navbar */
+.hero {
+  padding-top: 100px; /* Adjust for header height */
+}
