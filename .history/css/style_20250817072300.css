@@ -2452,8 +2452,7 @@ html, body {
 
 @media (max-width: 576px) {
     .logo {
-        font-size: .8rem;
-        margin-left: 10px;
+        font-size: 1rem;
     }
     .logo img {
         height: 60px !important;
@@ -2488,12 +2487,11 @@ html, body {
 }
 
 @media (max-width: 400px) {
-  .logo {
-        font-size: .8rem;
+    .logo {
+        font-size: 1rem;
     }
     .logo img {
         height: 50px !important;
-        width: 50px !important;
         margin: 0px;
     }
     .Kalpavriksha p {
