@@ -1253,7 +1253,7 @@ textarea.form-control {
 
 .social-links {
     position: absolute;
-    bottom: -50px;
+    bottom: -5px;
     left: 0;
     width: 100%;
     display: flex;
