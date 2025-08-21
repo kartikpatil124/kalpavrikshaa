@@ -2538,3 +2538,20 @@ html, body {
 .hero {
   padding-top: 100px; /* Adjust for header height */
 }
+
+
+.hero-video {
+    pointer-events: none;
+}
+.hero-video::-webkit-media-controls {
+    display: none !important;
+    -webkit-appearance: none;
+}
+.hero-video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+.container1{
+    padding-left: 30px;
+    padding-right: 30px;
+}
