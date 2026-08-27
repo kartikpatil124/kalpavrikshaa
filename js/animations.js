@@ -234,19 +234,6 @@ document.addEventListener('DOMContentLoaded', function() {
             ease: 'power3.out'
         });
     });
-    
-    // Animate course cards with stagger
-    gsap.from('.course-card', {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-            trigger: '.courses',
-            start: 'top 80%'
-        }
-    });
 });
 
 
