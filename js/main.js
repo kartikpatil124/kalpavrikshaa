@@ -107,12 +107,20 @@ backToTopBtn.addEventListener('click', (e) => {
 
 // Preloader
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        preloader.classList.add('fade-out');
+    if (preloader) {
         setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
-    }, 1000);
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
+            }, 500);
+        }, 400);
+    }
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
 });
 
 // Smooth Scrolling for Anchor Links
