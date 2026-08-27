@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admission Form | ForexPro Academy</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="Gemini_Generated_Image_t2bd2at2bd2at2bd-removebg-preview.png">
+    <title>Admission Form</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -52,31 +50,27 @@
             background-color: var(--gray-900);
             color: var(--text-color);
             min-height: 100vh;
-            min-height: 100dvh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            overflow-y: auto;
+            overflow: hidden;
             position: relative;
-            padding: 2rem 1rem;
         }
 
         .background {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: 1;
             overflow: hidden;
-            pointer-events: none;
         }
 
         .particle {
             position: absolute;
             border-radius: 50%;
-            background: rgba(59, 130, 246, 0.4);
+            background: rgba(59, 130, 246, 0.5);
             animation: float 15s infinite linear;
         }
 
@@ -91,45 +85,21 @@
             }
         }
 
-        .form-nav-back {
-            position: relative;
-            z-index: 2;
-            margin-bottom: 1.25rem;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .form-nav-back a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--white);
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-decoration: none;
-            padding: 0.5rem 0.75rem;
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            transition: var(--transition);
-        }
-
-        .form-nav-back a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--accent-color);
-        }
-
         .container {
             position: relative;
             z-index: 2;
-            background-color: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            background-color:   rgba(255, 255, 255, 0.371);
+            border-radius: 10px;
+            box-shadow: var(--shadow-2xl);
             width: 100%;
             max-width: 500px;
-            padding: 2.5rem 2rem;
-            margin: 0 auto;
+            padding: 2.5rem;
+            margin: 2rem;
             transition: var(--transition);
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
         }
 
         .form-title {
@@ -141,24 +111,23 @@
         }
 
         .form-group {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-label {
             display: block;
             font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--gray-800);
-            margin-bottom: 0.4rem;
+            font-weight: 500;
+            color: black;
+            margin-bottom: 0.5rem;
         }
 
         .form-control {
             width: 100%;
-            min-height: 48px;
             padding: 0.75rem 1rem;
             font-size: 1rem;
-            font-family: var(--font-primary);
-            color: var(--gray-900);
+            font-family: var(--font-secondary);
+            color: var(--gray-800);
             background-color: var(--gray-100);
             border: 1px solid var(--gray-300);
             border-radius: 6px;
@@ -168,33 +137,29 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary-color);
-            background-color: var(--white);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
         .form-control::placeholder {
-            color: var(--gray-500);
+            color: var(--gray-400);
         }
 
         select.form-control {
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%239ca3af' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 1rem center;
             background-size: 16px 12px;
         }
 
         textarea.form-control {
-            min-height: 110px;
+            min-height: 120px;
             resize: vertical;
         }
 
         .btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
+            display: inline-block;
             width: 100%;
-            min-height: 48px;
             padding: 0.875rem 1.5rem;
             font-size: 1rem;
             font-weight: 600;
@@ -207,7 +172,6 @@
             cursor: pointer;
             transition: var(--transition);
             box-shadow: var(--shadow-md);
-            margin-top: 0.5rem;
         }
 
         .btn:hover {
@@ -224,7 +188,7 @@
         .success-message {
             display: none;
             text-align: center;
-            padding: 2.5rem 2rem;
+            padding: 2rem;
         }
 
         .success-message h2 {
@@ -235,8 +199,8 @@
         }
 
         .success-message p {
-            color: var(--gray-700);
-            font-size: 1rem;
+            color: var(--gray-600);
+            font-size: 0.875rem;
             animation: fadeIn 1.5s ease;
         }
 
@@ -261,31 +225,14 @@
         }
 
         @media (max-width: 576px) {
-            body {
-                padding: 1.5rem 0.75rem;
-            }
             .container {
-                padding: 1.75rem 1.25rem;
-            }
-            .form-title {
-                font-size: 1.5rem;
-                margin-bottom: 1.25rem;
-            }
-        }
-
-        @media (max-width: 359px) {
-            .container {
-                padding: 1.5rem 1rem;
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="background" id="background"></div>
-
-    <div class="form-nav-back">
-        <a href="index.html">&larr; Back to Home</a>
-    </div>
     
     <div class="container" id="formContainer">
         <h1 class="form-title">Admission Form</h1>
@@ -296,7 +243,7 @@
             </div>
             
             <div class="form-group">
-                <label for="email" class="form-label">Email Address</label>
+                <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
             </div>
             
@@ -313,19 +260,16 @@
             
             <div class="form-group">
                 <label for="message" class="form-label">Your Message</label>
-                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
             </div>
             
-            <button type="submit" class="btn">Submit Application</button>
+            <button type="submit" class="btn">Submit</button>
         </form>
     </div>
     
     <div class="container success-message" id="successMessage" style="display: none;">
         <h2>Thanks for your submission!</h2>
-        <p>We will review your application and contact you soon.</p>
-        <div style="margin-top: 1.5rem;">
-            <a href="index.html" class="btn" style="text-decoration: none;">Return to Home</a>
-        </div>
+        <p>We will contact you soon.</p>
     </div>
 
     <script>

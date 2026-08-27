@@ -1,147 +1,411 @@
-// ==========================================================================
-// ForexPro Academy — Animations, Tabs & Accordions Controller
-// ==========================================================================
+// GSAP Animations
+gsap.registerPlugin(ScrollTrigger);
 
-(function() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const hasGSAP = typeof gsap !== 'undefined';
+// Hero Section Animations
+gsap.from('.hero-title', {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    ease: 'power3.out'
+});
 
-    // 1. GSAP Entrance Animations (when reduced motion is not requested)
-    if (!prefersReducedMotion && hasGSAP) {
-        if (document.querySelector('.hero-title')) {
-            gsap.from('.hero-title', {
-                duration: 0.8,
-                y: 25,
-                opacity: 0,
-                ease: 'power3.out'
-            });
-        }
+gsap.from('.hero-subtitle', {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    delay: 0.3,
+    ease: 'power3.out'
+});
 
-        if (document.querySelector('.hero-subtitle')) {
-            gsap.from('.hero-subtitle', {
-                duration: 0.8,
-                y: 20,
-                opacity: 0,
-                delay: 0.15,
-                ease: 'power3.out'
-            });
-        }
+gsap.from('.hero-btns', {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    delay: 0.6,
+    ease: 'power3.out'
+});
 
-        if (document.querySelector('.hero-btns')) {
-            gsap.from('.hero-btns', {
-                duration: 0.8,
-                y: 15,
-                opacity: 0,
-                delay: 0.3,
-                ease: 'power3.out'
-            });
-        }
+gsap.from('.hero-stats', {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    delay: 0.9,
+    ease: 'power3.out'
+});
 
-        if (document.querySelector('.hero-stats')) {
-            gsap.from('.hero-stats', {
-                duration: 0.8,
-                y: 15,
-                opacity: 0,
-                delay: 0.45,
-                ease: 'power3.out'
-            });
-        }
-    }
-
-    // 2. Universal Tab Controller (with Keyboard Arrow navigation)
-    document.addEventListener('DOMContentLoaded', () => {
-        const tabContainers = document.querySelectorAll('.details-tabs, .feature-tabs');
-
-        tabContainers.forEach(container => {
-            const tabButtons = container.querySelectorAll('.tab-btn');
-            const tabContents = container.querySelectorAll('.tab-content');
-
-            tabButtons.forEach((btn, index) => {
-                btn.addEventListener('click', () => {
-                    const targetTabId = btn.getAttribute('data-tab');
-                    if (!targetTabId) return;
-
-                    // Update button states
-                    tabButtons.forEach(b => {
-                        b.classList.remove('active');
-                        b.setAttribute('aria-selected', 'false');
-                    });
-                    btn.classList.add('active');
-                    btn.setAttribute('aria-selected', 'true');
-
-                    // Update content panels
-                    tabContents.forEach(content => {
-                        if (content.getAttribute('data-tab') === targetTabId) {
-                            content.classList.add('active');
-                        } else {
-                            content.classList.remove('active');
-                        }
-                    });
-                });
-
-                // Keyboard arrow navigation
-                btn.addEventListener('keydown', (e) => {
-                    let nextIndex = null;
-                    if (e.key === 'ArrowRight') {
-                        nextIndex = (index + 1) % tabButtons.length;
-                    } else if (e.key === 'ArrowLeft') {
-                        nextIndex = (index - 1 + tabButtons.length) % tabButtons.length;
-                    }
-
-                    if (nextIndex !== null) {
-                        e.preventDefault();
-                        tabButtons[nextIndex].focus();
-                        tabButtons[nextIndex].click();
-                    }
-                });
-            });
-        });
-
-        // 3. Dynamic Height FAQ Accordion Controller
-        const accordionBtns = document.querySelectorAll('.accordion-btn');
-
-        accordionBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const content = btn.nextElementSibling;
-                if (!content) return;
-                const isOpen = btn.classList.contains('active');
-                const icon = btn.querySelector('i');
-
-                // Close other accordions in the same group for a clean experience
-                const parentAccordion = btn.closest('.faq-accordion');
-                if (parentAccordion && !isOpen) {
-                    parentAccordion.querySelectorAll('.accordion-btn.active').forEach(otherBtn => {
-                        otherBtn.classList.remove('active');
-                        otherBtn.setAttribute('aria-expanded', 'false');
-                        if (otherBtn.nextElementSibling) {
-                            otherBtn.nextElementSibling.style.maxHeight = '0px';
-                        }
-                        const otherIcon = otherBtn.querySelector('i');
-                        if (otherIcon) {
-                            otherIcon.classList.remove('fa-minus');
-                            otherIcon.classList.add('fa-plus');
-                        }
-                    });
-                }
-
-                if (isOpen) {
-                    btn.classList.remove('active');
-                    btn.setAttribute('aria-expanded', 'false');
-                    content.style.maxHeight = '0px';
-                    if (icon) {
-                        icon.classList.remove('fa-minus');
-                        icon.classList.add('fa-plus');
-                    }
-                } else {
-                    btn.classList.add('active');
-                    btn.setAttribute('aria-expanded', 'true');
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                    if (icon) {
-                        icon.classList.remove('fa-plus');
-                        icon.classList.add('fa-minus');
-                    }
-                }
-            });
+// Animated Background for Features
+const featureBoxes = document.querySelectorAll('.feature-box');
+featureBoxes.forEach(box => {
+    box.addEventListener('mouseenter', () => {
+        gsap.to(box.querySelector('.feature-wave'), {
+            duration: 0.5,
+            opacity: 0.3,
+            ease: 'power2.out'
         });
     });
-})();
+    
+    box.addEventListener('mouseleave', () => {
+        gsap.to(box.querySelector('.feature-wave'), {
+            duration: 0.5,
+            opacity: 0.1,
+            ease: 'power2.out'
+        });
+    });
+});
+
+// Course Card Hover Animation
+const courseCards = document.querySelectorAll('.course-card');
+courseCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+            duration: 0.3,
+            scale: 1.03,
+            ease: 'power2.out'
+        });
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+            duration: 0.3,
+            scale: 1,
+            ease: 'power2.out'
+        });
+    });
+});
+
+// Scroll Animations with GSAP
+gsap.utils.toArray('.animate-on-scroll').forEach(section => {
+    gsap.from(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out'
+    });
+});
+
+// Floating Elements Animation
+const floatingElements = document.querySelectorAll('.float');
+floatingElements.forEach(element => {
+    gsap.to(element, {
+        y: 20,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+    });
+});
+
+// Background Pattern Animation
+const animatedBgElements = document.querySelectorAll('.animated-bg');
+animatedBgElements.forEach(element => {
+    gsap.to(element, {
+        backgroundPositionX: '100%',
+        duration: 20,
+        repeat: -1,
+        ease: 'linear'
+    });
+});
+
+// Text Animation on Scroll
+const textAnimateElements = document.querySelectorAll('.text-animate');
+textAnimateElements.forEach(element => {
+    ScrollTrigger.create({
+        trigger: element,
+        start: 'top 80%',
+        onEnter: () => {
+            gsap.to(element, {
+                duration: 1,
+                opacity: 1,
+                y: 0,
+                ease: 'power3.out'
+            });
+        }
+    });
+});
+
+// Parallax Effect for Hero Section
+gsap.to('.hero-video-overlay', {
+    scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+    },
+    opacity: 0.8
+});
+
+// Animated Gradient Text
+const gradientTextElements = document.querySelectorAll('.text-gradient');
+gradientTextElements.forEach(element => {
+    gsap.to(element, {
+        backgroundPositionX: '100%',
+        duration: 5,
+        repeat: -1,
+        ease: 'linear'
+    });
+});
+
+// Scroll Progress Indicator
+const scrollProgress = document.createElement('div');
+scrollProgress.classList.add('scroll-progress');
+document.body.appendChild(scrollProgress);
+
+gsap.to(scrollProgress, {
+    width: '100%',
+    ease: 'none',
+    scrollTrigger: {
+        scrub: 0.5
+    }
+});
+
+// Interactive Mouse Follow Effect
+document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    
+    gsap.to('.cursor-follower', {
+        x: mouseX,
+        y: mouseY,
+        duration: 0.5,
+        ease: 'power2.out'
+    });
+});
+
+// Initialize all animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Create cursor follower if not exists
+    if (!document.querySelector('.cursor-follower')) {
+        const cursorFollower = document.createElement('div');
+        cursorFollower.classList.add('cursor-follower');
+        document.body.appendChild(cursorFollower);
+    }
+    
+    // Animate elements with delay
+    gsap.utils.toArray('.animate-delay').forEach((element, index) => {
+        gsap.from(element, {
+            duration: 1,
+            opacity: 0,
+            y: 20,
+            delay: index * 0.2,
+            ease: 'power3.out'
+        });
+    });
+    
+    // Animate course cards with stagger
+    gsap.from('.course-card', {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+            trigger: '.courses',
+            start: 'top 80%'
+        }
+    });
+});
+
+
+
+
+
+// Page Hero Animation
+gsap.from('.page-hero .hero-title', {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    ease: 'power3.out'
+});
+
+gsap.from('.page-hero .hero-subtitle', {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    delay: 0.3,
+    ease: 'power3.out'
+});
+
+// Team Member Hover Animation
+const teamMembers = document.querySelectorAll('.team-member');
+teamMembers.forEach(member => {
+    member.addEventListener('mouseenter', () => {
+        gsap.to(member.querySelector('.member-image img'), {
+            duration: 0.5,
+            scale: 1.05,
+            ease: 'power2.out'
+        });
+        
+        gsap.to(member.querySelector('.social-links'), {
+            duration: 0.3,
+            bottom: 0,
+            ease: 'power2.out'
+        });
+    });
+    
+    member.addEventListener('mouseleave', () => {
+        gsap.to(member.querySelector('.member-image img'), {
+            duration: 0.5,
+            scale: 1,
+            ease: 'power2.out'
+        });
+        
+        gsap.to(member.querySelector('.social-links'), {
+            duration: 0.3,
+            bottom: -50,
+            ease: 'power2.out'
+        });
+    });
+});
+
+// Feature Card Animation
+const featureCards = document.querySelectorAll('.feature-card');
+featureCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+            duration: 0.3,
+            y: -10,
+            ease: 'power2.out'
+        });
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+            duration: 0.3,
+            y: 0,
+            ease: 'power2.out'
+        });
+    });
+});
+
+// Accordion Animation
+const accordionBtns = document.querySelectorAll('.accordion-btn');
+accordionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('active');
+        
+        if (isOpen) {
+            gsap.to(content, {
+                duration: 0.3,
+                maxHeight: 0,
+                ease: 'power2.out',
+                onComplete: () => {
+                    btn.classList.remove('active');
+                }
+            });
+        } else {
+            btn.classList.add('active');
+            gsap.to(content, {
+                duration: 0.3,
+                maxHeight: content.scrollHeight + 'px',
+                ease: 'power2.out'
+            });
+        }
+    });
+});
+
+// Tab Animation
+const tabBtns = document.querySelectorAll('.tab-btn');
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const tabId = btn.getAttribute('data-tab');
+        const tabContent = document.querySelector(`.tab-content[data-tab="${tabId}"]`);
+        
+        // Hide all tabs
+        document.querySelectorAll('.tab-content').forEach(content => {
+            gsap.to(content, {
+                duration: 0.3,
+                opacity: 0,
+                y: 20,
+                ease: 'power2.out',
+                onComplete: () => {
+                    content.classList.remove('active');
+                }
+            });
+        });
+        
+        // Remove active class from all buttons
+        tabBtns.forEach(btn => btn.classList.remove('active'));
+        
+        // Show selected tab
+        btn.classList.add('active');
+        tabContent.classList.add('active');
+        gsap.fromTo(tabContent, 
+            { opacity: 0, y: 20 },
+            { duration: 0.3, opacity: 1, y: 0, ease: 'power2.out' }
+        );
+    });
+});
+
+// Counter Animation for About Page
+function animateAboutCounters() {
+    const counters = document.querySelectorAll('.about-section .counter');
+    if (!counters.length) return;
+    
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 2000; // 2 seconds
+        const startTime = Date.now();
+        
+        const updateCounter = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const value = Math.floor(progress * target);
+            
+            counter.textContent = value.toLocaleString();
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
+        };
+        
+        updateCounter();
+    });
+}
+
+// Initialize about page counters when scrolled to
+const aboutSection = document.querySelector('.about-section');
+if (aboutSection) {
+    const aboutObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            animateAboutCounters();
+            aboutObserver.unobserve(aboutSection);
+        }
+    }, { threshold: 0.5 });
+    
+    aboutObserver.observe(aboutSection);
+}
+
+// CTA Section Animation
+gsap.from('.cta-section', {
+    scrollTrigger: {
+        trigger: '.cta-section',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out'
+});
+
+// Map Animation
+const mapSection = document.querySelector('.map-section');
+if (mapSection) {
+    gsap.from(mapSection, {
+        scrollTrigger: {
+            trigger: mapSection,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out'
+    });
+}
