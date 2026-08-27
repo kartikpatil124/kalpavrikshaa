@@ -32,7 +32,9 @@
     --transition: all 0.3s ease;
 }
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -41,6 +43,9 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -48,7 +53,10 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--light-color);
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -586,8 +594,10 @@ img {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -620,13 +630,16 @@ img {
     display: flex;
     flex-direction: column;
     padding: 1.5rem 1.25rem;
-    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: auto;
+    visibility: hidden;
+    pointer-events: none;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
     overflow-y: auto;
 }
 
 .mobile-nav-drawer.active {
     right: 0;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .mobile-nav-header {
@@ -2091,13 +2104,17 @@ textarea.form-control {
 
 .map-container {
     border-radius: 10px;
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     overflow: hidden;
-    margin-left: 100px;
+    margin: 0 auto;
     box-shadow: var(--shadow-lg);
 }
-.map-container iframe{
-    width: 1000px;
+.map-container iframe {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    border: 0;
 }
 
 /* Testimonials Page Styles */
@@ -2291,7 +2308,9 @@ textarea.form-control {
 
 @media (max-width: 768px) {
     .container {
-        max-width: 90%;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1.25rem;
     }
     
     .hero-title {
@@ -2310,14 +2329,13 @@ textarea.form-control {
         font-size: 2rem;
     }
     
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-    
+    .stats-grid,
     .team-grid,
     .values-grid,
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .features-grid,
+    .courses-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
     }
     
     .comparison-table th,
@@ -2470,20 +2488,23 @@ textarea.form-control {
 
 /* Comparison Table Slider */
 .comparison-container {
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    margin: 0 -1.5rem;
-    padding: 0 1.5rem;
+    margin: 0;
+    padding: 0 0 1rem 0;
 }
 
 .comparison-table {
-    min-width: 600px; /* Minimum width for table */
+    min-width: 550px; /* Minimum width for table */
+    width: 100%;
     white-space: nowrap;
 }
 
 .comparison-table table {
     width: 100%;
-    min-width: 600px;
+    min-width: 550px;
 }
 
 
