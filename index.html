@@ -25,6 +25,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Skip to Content for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Preloader -->
     <div class="preloader">
         <div class="loader">
@@ -52,7 +55,7 @@
     <!-- Header/Navbar -->
     <header class="header">
         <div class="container">
-            <nav class="navbar">
+            <nav class="navbar" aria-label="Main Navigation">
                 <a href="index.html" class="logo">
                     <img src="./Gemini_Generated_Image_t2bd2at2bd2at2bd-removebg-preview.png" class="logo-img" alt="ForexPro Academy Logo">
                     <span>Kalpavriksha</span>
@@ -76,185 +79,176 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-video-overlay"></div>
-        <video autoplay muted loop class="hero-video">
-            <source src="./204292-923909617_small.mp4" type="video/mp4">
-        </video>
-        
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
-                    Master <span class="text-gradient">Forex Trading</span> With Experts
-                </h1>
-                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                    Join our comprehensive forex trading courses and start your journey to financial freedom today.
-                </p>
-                <div class="hero-btns" data-aos="fade-up" data-aos-delay="300">
-                    <a href="./form.html" class="btn btn-primary">Get Started</a>
-                    <a href="./about.html" class="btn btn-outline">Learn More</a>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-video-overlay"></div>
+            <video autoplay muted loop playsinline class="hero-video" poster="about-company-1.jpg">
+                <source src="./204292-923909617_small.mp4" type="video/mp4">
+            </video>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                        Master <span class="text-gradient">Forex Trading</span> With Experts
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        Join our comprehensive forex trading courses and start your journey to financial freedom today.
+                    </p>
+                    <div class="hero-btns" data-aos="fade-up" data-aos-delay="300">
+                        <a href="./form.html" class="btn btn-primary">Get Started</a>
+                        <a href="./about.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-item">
+                        <div class="stat-number counter" data-target="10000">0</div>
+                        <p class="stat-label">Students Trained</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number counter" data-target="95">0</div>
+                        <p class="stat-label">Success Rate</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number counter" data-target="15">0</div>
+                        <p class="stat-label">Years Experience</p>
+                    </div>
                 </div>
             </div>
-
             
-            <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
-    <div class="stat-item stat-item-1">
-        <h3 class="stat-number counter" data-target="10000">0</h3>
-        <p class="stat-label">Students Trained</p>
-    </div>
-    <div class="stat-item stat-item-2">
-        <h3 class="stat-number counter" data-target="95">0</h3>
-        <p class="stat-label">Success Rate</p>
-    </div>
-    <div class="stat-item stat-item-3">
-        <h3 class="stat-number counter" data-target="15">0</h3>
-        <p class="stat-label">Years Experience</p>
-    </div>
-</div>
-        
-        <div class="scroll-down">
-            <a href="#about">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a href="#about" class="scroll-down" aria-label="Scroll down to About section">
+                <i class="fas fa-chevron-down"></i>
             </a>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Why Choose ForexPro Academy</h2>
-                <p class="section-subtitle">We provide the best forex trading education with proven strategies</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-image" data-aos="fade-right">
-                    <img src="./man-2562325_1280.jpg" alt="About ForexPro Academy">
-                    <div class="experience-badge">
-                        <h3>15+</h3>
-                        <p>Years Experience</p>
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image" data-aos="fade-right">
+                        <img src="man-2562325_1280.jpg" alt="Forex Trading Professional">
+                        <div class="experience-badge">
+                            <span class="exp-years counter" data-target="15">0</span>
+                            <span class="exp-text">Years of<br>Experience</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="about-text" data-aos="fade-left">
-                    <h3>Learn From The Best Forex Traders In The Industry</h3>
-                    <p>At ForexPro Academy, we're committed to providing top-notch forex trading education that empowers our students to achieve financial independence.</p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-chart-line"></i>
+                    <div class="about-text" data-aos="fade-left">
+                        <h2 class="section-title">Why Choose ForexPro Academy?</h2>
+                        <p>At ForexPro Academy, we provide world-class forex education tailored for traders of all skill levels. Whether you're a complete beginner or looking to refine your strategy, our expert mentors are here to guide you.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Proven Strategies</h4>
+                                    <p>Learn strategies that have been tested in live markets with real results.</p>
+                                </div>
                             </div>
-                            <div class="feature-text">
-                                <h4>Proven Strategies</h4>
-                                <p>Learn strategies that have been tested in live markets with real results.</p>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Expert Mentors</h4>
+                                    <p>Get guidance from industry experts with years of trading experience.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>24/7 Support</h4>
+                                    <p>Our support team is always available to help you with any questions.</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-user-graduate"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Expert Mentors</h4>
-                                <p>Get guidance from industry experts with years of trading experience.</p>
-                            </div>
+                        <a href="./features.html" class="btn btn-primary">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="section courses" id="courses">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Our Comprehensive Courses</h2>
+                    <p class="section-subtitle">Choose the perfect course for your trading journey</p>
+                </div>
+                
+                <div class="courses-grid">
+                    <div class="course-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-header">
+                            <h3>Beginner Course</h3>
+                            <div class="course-price">$199</div>
                         </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>24/7 Support</h4>
-                                <p>Our support team is always available to help you with any questions.</p>
-                            </div>
+                        <div class="course-body">
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> Forex Market Basics</li>
+                                <li><i class="fas fa-check"></i> Understanding Currency Pairs</li>
+                                <li><i class="fas fa-check"></i> Introduction to Technical Analysis</li>
+                                <li><i class="fas fa-check"></i> Risk Management Fundamentals</li>
+                                <li><i class="fas fa-check"></i> Demo Account Setup Guide</li>
+                            </ul>
                         </div>
+                        <div class="course-footer">
+                            <a href="./form.html" class="btn btn-outline">Enroll Now</a>
+                        </div>
+                        <div class="course-badge">Popular</div>
                     </div>
                     
-                    <a href="./features.html" class="btn btn-primary">Discover More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section class="section courses" id="courses">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Our Comprehensive Courses</h2>
-                <p class="section-subtitle">Choose the perfect course for your trading journey</p>
-            </div>
-            
-            <div class="courses-grid">
-                <div class="course-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="course-header">
-                        <h3>Beginner Course</h3>
-                        <div class="course-price">$199</div>
+                    <div class="course-card featured" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course-header">
+                            <h3>Intermediate Course</h3>
+                            <div class="course-price">$399</div>
+                        </div>
+                        <div class="course-body">
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> Advanced Technical Analysis</li>
+                                <li><i class="fas fa-check"></i> Price Action Strategies</li>
+                                <li><i class="fas fa-check"></i> Fibonacci Trading</li>
+                                <li><i class="fas fa-check"></i> Support & Resistance Mastery</li>
+                                <li><i class="fas fa-check"></i> Trading Psychology</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <a href="./form.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                        <div class="course-badge">Best Value</div>
                     </div>
-                    <div class="course-body">
-                        <ul class="course-features">
-                            <li><i class="fas fa-check"></i> Forex Market Basics</li>
-                            <li><i class="fas fa-check"></i> Understanding Currency Pairs</li>
-                            <li><i class="fas fa-check"></i> Introduction to Technical Analysis</li>
-                            <li><i class="fas fa-check"></i> Risk Management Fundamentals</li>
-                            <li><i class="fas fa-check"></i> Demo Account Setup Guide</li>
-                        </ul>
+                    
+                    <div class="course-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="course-header">
+                            <h3>Advanced Course</h3>
+                            <div class="course-price">$699</div>
+                        </div>
+                        <div class="course-body">
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> Institutional Trading Strategies</li>
+                                <li><i class="fas fa-check"></i> Algorithmic Trading Basics</li>
+                                <li><i class="fas fa-check"></i> Advanced Risk Management</li>
+                                <li><i class="fas fa-check"></i> Portfolio Diversification</li>
+                                <li><i class="fas fa-check"></i> 1-on-1 Mentor Sessions</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <a href="./form.html" class="btn btn-outline">Enroll Now</a>
+                        </div>
                     </div>
-                    <div class="course-footer">
-                        <a href="#" class="btn btn-outline">Enroll Now</a>
-                    </div>
-                    <div class="course-badge">Popular</div>
                 </div>
                 
-                <div class="course-card featured" data-aos="fade-up" data-aos-delay="200">
-                    <div class="course-header">
-                        <h3>Intermediate Course</h3>
-                        <div class="course-price">$399</div>
-                    </div>
-                    <div class="course-body">
-                        <ul class="course-features">
-                            <li><i class="fas fa-check"></i> Advanced Technical Analysis</li>
-                            <li><i class="fas fa-check"></i> Price Action Strategies</li>
-                            <li><i class="fas fa-check"></i> Fibonacci Trading</li>
-                            <li><i class="fas fa-check"></i> Support & Resistance Mastery</li>
-                            <li><i class="fas fa-check"></i> Trading Psychology</li>
-                        </ul>
-                    </div>
-                    <div class="course-footer">
-                        <a href="#" class="btn btn-primary">Enroll Now</a>
-                    </div>
-                    <div class="course-badge">Best Value</div>
-                </div>
-                
-                <div class="course-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="course-header">
-                        <h3>Advanced Course</h3>
-                        <div class="course-price">$699</div>
-                    </div>
-                    <div class="course-body">
-                        <ul class="course-features">
-                            <li><i class="fas fa-check"></i> Institutional Trading Strategies</li>
-                            <li><i class="fas fa-check"></i> Algorithmic Trading Basics</li>
-                            <li><i class="fas fa-check"></i> Advanced Risk Management</li>
-                            <li><i class="fas fa-check"></i> Portfolio Diversification</li>
-                            <li><i class="fas fa-check"></i> 1-on-1 Mentor Sessions</li>
-                        </ul>
-                    </div>
-                    <div class="course-footer">
-                        <a href="#" class="btn btn-outline">Enroll Now</a>
-                    </div>
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="./courses.html" class="btn btn-secondary">View All Courses</a>
                 </div>
             </div>
-            
-            <div class="text-center mt-5" data-aos="fade-up">
-                <a href="./courses.html" class="btn btn-secondary">View All Courses</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Features Section -->
     <section class="section features" id="features">
@@ -430,7 +424,7 @@
             
             <div class="testimonials-cta" data-aos="fade-up">
                 <h3>Ready to start your forex trading journey?</h3>
-                <a href="#" class="btn btn-primary">Join Now</a>
+                <a href="./form.html" class="btn btn-primary">Join Now</a>
             </div>
         </div>
     </section>
@@ -440,7 +434,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">We'd love to hear from you</p>
+                <p class="section-subtitle">We'd love to hear from you. Reach out with any questions.</p>
             </div>
             
             <div class="contact-content">
@@ -476,29 +470,33 @@
                     </div>
                     
                     <div class="contact-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="contact-form" data-aos="fade-left">
                     <form id="contactForm">
                         <div class="form-group">
+                            <label for="name">Full Name</label>
                             <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
+                            <label for="email">Email Address</label>
                             <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
+                            <label for="subject">Subject</label>
                             <input type="text" class="form-control" id="subject" placeholder="Subject">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            <label for="message">Your Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -506,19 +504,20 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="newsletter">
+    <section class="newsletter section" style="background: linear-gradient(135deg, var(--dark-navy) 0%, #1e293b 100%); color: var(--white); text-align: center;">
         <div class="container">
-            <div class="newsletter-content" data-aos="fade-up">
-                <h2>Subscribe To Our Newsletter</h2>
-                <p>Get the latest trading tips, market analysis, and exclusive offers directly to your inbox.</p>
+            <div class="newsletter-content" data-aos="fade-up" style="max-width: 600px; margin: 0 auto;">
+                <h2 style="color: var(--white); margin-bottom: 0.75rem;">Subscribe To Our Newsletter</h2>
+                <p style="color: rgba(255, 255, 255, 0.85); margin-bottom: 2rem;">Get the latest trading tips, market analysis, and exclusive educational offers.</p>
                 
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email address" required>
+                <form class="newsletter-form" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                    <input type="email" class="form-control" placeholder="Enter your email address" required style="max-width: 360px; min-height: 48px; border-radius: var(--radius-full);">
                     <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -526,60 +525,60 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <a href="index.html" class="footer-logo">
-                        <img src="Gemini_Generated_Image_t2bd2at2bd2at2bd-removebg-preview.png" alt="ForexPro Academy Logo">
+                        <img src="./Gemini_Generated_Image_t2bd2at2bd2at2bd-removebg-preview.png" class="logo-img" alt="ForexPro Academy Logo">
                         <span>Kalpavriksha</span>
                     </a>
-                    <p>Empowering traders with knowledge, skills, and confidence to succeed in the forex markets.</p>
+                    <p>Empowering traders with knowledge, skills, and confidence to succeed in the global forex markets.</p>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Courses</h3>
-                    <ul>
-                        <li><a href="#">Beginner Course</a></li>
-                        <li><a href="#">Intermediate Course</a></li>
-                        <li><a href="#">Advanced Course</a></li>
-                        <li><a href="#">Mentorship Program</a></li>
-                        <li><a href="#">Live Trading Sessions</a></li>
+                    <ul class="footer-links">
+                        <li><a href="courses.html">Beginner Course</a></li>
+                        <li><a href="courses.html">Intermediate Course</a></li>
+                        <li><a href="courses.html">Advanced Course</a></li>
+                        <li><a href="courses.html">Mentorship Program</a></li>
+                        <li><a href="courses.html">Live Trading Sessions</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Support</h3>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Refund Policy</a></li>
-                        <li><a href="#">Help Center</a></li>
+                    <ul class="footer-links">
+                        <li><a href="contact.html#faq">FAQ</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#refund">Refund Policy</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 ForexPro Academy. All Rights Reserved.</p>
+                <p>&copy; 2026 ForexPro Academy. All Rights Reserved.</p>
                 <div class="footer-payments">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-paypal"></i>
-                    <i class="fab fa-cc-stripe"></i>
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-paypal" title="PayPal"></i>
+                    <i class="fab fa-cc-stripe" title="Stripe"></i>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
+    <a href="#top" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
