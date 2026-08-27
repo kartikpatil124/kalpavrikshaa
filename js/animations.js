@@ -1,5 +1,40 @@
 // GSAP Animations
-gsap.registerPlugin(ScrollTrigger);
+if (typeof gsap !== 'undefined') {
+    if (typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+    }
+
+    // SaaS Navbar Entrance Timeline
+    const headerEl = document.querySelector('.header');
+    if (headerEl) {
+        const navTl = gsap.timeline({ delay: 0.1 });
+        navTl.from('.navbar', {
+            y: -25,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power3.out'
+        })
+        .from('.logo', {
+            x: -15,
+            opacity: 0,
+            duration: 0.45,
+            ease: 'power2.out'
+        }, '-=0.45')
+        .from('.nav-links li', {
+            y: -8,
+            opacity: 0,
+            duration: 0.35,
+            stagger: 0.04,
+            ease: 'power2.out'
+        }, '-=0.35')
+        .from('.nav-actions', {
+            scale: 0.92,
+            opacity: 0,
+            duration: 0.4,
+            ease: 'back.out(1.6)'
+        }, '-=0.25');
+    }
+}
 
 // Hero Section Animations
 gsap.from('.hero-title', {

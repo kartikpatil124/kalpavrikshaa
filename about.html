@@ -48,28 +48,81 @@
 
     <!-- Header/Navbar -->
     <header class="header">
-        <div class="container">
+        <div class="container header-container">
             <nav class="navbar">
                 <a href="index.html" class="logo">
-                    <img src="./Gemini_Generated_Image_t2bd2at2bd2at2bd-removebg-preview.png" style="height: 80px; overflow: hidden;" alt="ForexPro Academy Logo">
-                    <span>Kalpavriksha</span>
+                    <div class="logo-img-wrapper">
+                        <img src="./Gemini_Generated_Image_t2bd2at2bd2at2bd-removebg-preview.png" alt="Kalpavriksha Academy Logo">
+                    </div>
+                    <span class="logo-text">Kalpavriksha</span>
+                    <span class="logo-badge"><span class="badge-pulse"></span>PRO</span>
                 </a>
                 
-                <div class="nav-links">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="about.html" class="nav-link active">About</a>
-                    <a href="courses.html" class="nav-link">Courses</a>
-                    <a href="features.html" class="nav-link">Features</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                    <a href="#" class="btn btn-primary nav-cta">Join Now</a>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link"><i class="fas fa-home nav-icon"></i><span>Home</span></a></li>
+                        <li><a href="about.html" class="nav-link active"><i class="fas fa-chart-line nav-icon"></i><span>About</span></a></li>
+                        <li><a href="courses.html" class="nav-link"><i class="fas fa-graduation-cap nav-icon"></i><span>Courses</span></a></li>
+                        <li><a href="features.html" class="nav-link"><i class="fas fa-bolt nav-icon"></i><span>Features</span></a></li>
+                        <li><a href="contact.html" class="nav-link"><i class="fas fa-headset nav-icon"></i><span>Contact</span></a></li>
+                    </ul>
                 </div>
-                
-                <div class="mobile-menu-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+
+                <div class="nav-actions">
+                    <a href="form.html" class="btn btn-primary nav-cta">
+                        <span>Join Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    
+                    <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </nav>
+        </div>
+
+        <!-- Mobile Drawer Overlay & Menu -->
+        <div class="mobile-nav-backdrop"></div>
+        <div class="mobile-nav-drawer">
+            <div class="mobile-nav-header">
+                <a href="index.html" class="logo">
+                    <div class="logo-img-wrapper">
+                        <img src="./Gemini_Generated_Image_t2bd2at2bd2at2bd-removebg-preview.png" alt="Kalpavriksha Logo">
+                    </div>
+                    <span class="logo-text">Kalpavriksha</span>
+                </a>
+                <button class="mobile-close-btn" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-live-status">
+                <span class="live-indicator"></span>
+                <span>Live Trading Desk Active</span>
+            </div>
+
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i><span>Home</span><i class="fas fa-chevron-right arrow"></i></a></li>
+                <li><a href="about.html" class="mobile-nav-link active"><i class="fas fa-chart-line"></i><span>About Us</span><i class="fas fa-chevron-right arrow"></i></a></li>
+                <li><a href="courses.html" class="mobile-nav-link"><i class="fas fa-graduation-cap"></i><span>Courses</span><i class="fas fa-chevron-right arrow"></i></a></li>
+                <li><a href="features.html" class="mobile-nav-link"><i class="fas fa-bolt"></i><span>Features</span><i class="fas fa-chevron-right arrow"></i></a></li>
+                <li><a href="contact.html" class="mobile-nav-link"><i class="fas fa-headset"></i><span>Contact</span><i class="fas fa-chevron-right arrow"></i></a></li>
+            </ul>
+
+            <div class="mobile-nav-footer">
+                <a href="form.html" class="btn btn-primary btn-block mobile-cta">
+                    <span>Enroll Today</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="mobile-socials">
+                    <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
     </header>
 
