@@ -4,34 +4,38 @@ if (typeof gsap !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
     }
 
-    // SaaS Navbar Entrance Timeline
+    // Header Entrance Timeline
     const headerEl = document.querySelector('.header');
     if (headerEl) {
         const navTl = gsap.timeline({ delay: 0.1 });
-        navTl.from('.navbar', {
+        navTl.from('.header', {
             y: -25,
             opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out'
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'opacity,transform'
         })
         .from('.logo', {
             x: -15,
             opacity: 0,
             duration: 0.45,
-            ease: 'power2.out'
+            ease: 'power2.out',
+            clearProps: 'opacity,transform'
         }, '-=0.45')
         .from('.nav-links li', {
             y: -8,
             opacity: 0,
             duration: 0.35,
             stagger: 0.04,
-            ease: 'power2.out'
+            ease: 'power2.out',
+            clearProps: 'opacity,transform'
         }, '-=0.35')
         .from('.nav-actions', {
             scale: 0.92,
             opacity: 0,
             duration: 0.4,
-            ease: 'back.out(1.6)'
+            ease: 'back.out(1.6)',
+            clearProps: 'opacity,transform'
         }, '-=0.25');
     }
 }
