@@ -189,19 +189,6 @@ gradientTextElements.forEach(element => {
     });
 });
 
-// Scroll Progress Indicator
-const scrollProgress = document.createElement('div');
-scrollProgress.classList.add('scroll-progress');
-document.body.appendChild(scrollProgress);
-
-gsap.to(scrollProgress, {
-    width: '100%',
-    ease: 'none',
-    scrollTrigger: {
-        scrub: 0.5
-    }
-});
-
 // Interactive Mouse Follow Effect
 document.addEventListener('mousemove', (e) => {
     const mouseX = e.clientX;
